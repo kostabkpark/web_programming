@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 50px;
+        height: 50px;
+        background-color: skyblue;
+        margin: 10px;
+      }
+      #container {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        background-color: yellowgreen;
+      }
+      #a {
+        position: absolute;
+        left: 100px;
+        top: 100px;
+      }
+
+      #b {
+        position: relative;
+        top: -20px;
+        left: 20px;
+      }
+
+      #c {
+        position: relative;
+        top: 30px;
+        left: 50px;
+      }
+      button {
+        position: fixed;
+        bottom: 20px;
+        right: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div id="container"> -->
+    <div id="a">A</div>
+    <div id="b">B</div>
+    <div id="c">C</div>
+    <button>주문하기</button>
+    <!-- </div> -->
+  </body>
+</html>

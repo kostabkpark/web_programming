@@ -26,3 +26,6 @@ background-color: yellow;
   li:nth-child(even) {
     color: black;
   }
+  div {background-color: yellow;
+border: 1px solid grey;
+margin:20px auto; padding:10px}
