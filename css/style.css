@@ -1,0 +1,28 @@
+@charset "utf-8";
+* {
+    color: green;
+  }
+  ul {
+    background-color: mistyrose;
+  }
+  #today > span {
+    color: red;
+  }
+  /* .list {
+color: blue;
+}*/
+  /* ul span { 
+background-color: yellow;
+*/
+  p > span {
+    color: black;
+  }
+  li:hover {
+    background-color: yellowgreen;
+  }
+  li:nth-child(1) {
+    color: red;
+  }
+  li:nth-child(even) {
+    color: black;
+  }
