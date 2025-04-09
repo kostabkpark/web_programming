@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let account = {
+            // 키 : 값
+             owner : "홍길동",
+             code : "1111",
+             balance : 50000,
+             deposit : function() {
+                console.log("입금 처리");
+             },
+             withdraw : function() {
+                console.log("출금 처리");
+             },
+             inquiry : function () {
+                console.log("잔액 조회");
+             }
+        }
+
+        console.log(account.owner);
+        console.log(account.code);
+        account.inquiry();
+        account.deposit();
+        account.withdraw();
+    </script>
+</body>
+</html>

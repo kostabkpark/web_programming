@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>코어 객체 생성</h3>
+    <hr>
+    <script>
+        let today = new Date();
+        document.write("<p>현재 시간 : " + today.toLocaleString() + "</p>");
+
+        let str = new String("hello");
+        document.write("<p>" + str + "은 " + str.length + " 글자입니다.</p>")
+
+        let cities = ["seoul", "new york", "paris"];
+        document.write("<ul>");
+        for(let i=0; i<cities.length; i++) {
+            document.write("<li>");
+            document.write(cities[i]);
+            document.write("</li>");
+        }
+        document.write("</ul>");
+
+        let week = new Array();
+        console.log(week.length);
+        week[0] = "월"; console.log(week.length);
+        week[1] = "화"; console.log(week.length);
+        week[2] = "수"; console.log(week.length);
+        week[6] = "일"; console.log(week.length);
+        console.log(week[5]);
+    </script>
+</body>
+</html>

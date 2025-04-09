@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 학생의 점수를 입력받아서 scores 라는 배열에 저장한다.
+    -1을 입력받을 때까지 계속 입력받는다. 입력이 완료되면 몇명인지, 총점과 평균을 구하여 출력한다.
+     -->
+    <h3>학생의 점수 처리</h3>
+    <hr>
+    <script>
+        let scores = new Array();
+        let count = 0;
+        let score = 0;
+        while(true) {
+            score = prompt("점수를 입력하세요. 종료하려면 -1 입력..");
+            if(score != null && !isNaN(score)) {
+                score = parseInt(score);
+                if(score == -1) break;
+                scores[count++] = score;
+            }
+        }
+
+        let sum = 0;
+        for(let i=0; i<scores.length; i++) {
+            sum += scores[i];
+        }
+        let avg = sum/scores.length;
+        document.write("<p>");
+        document.write("학생의 수 : " + scores.length)
+        document.write("</p>");
+        document.write("<p>");
+        document.write("총점 : " + sum)
+        document.write("</p>");
+        document.write("<p>");
+        document.write("평균 : " + avg)
+        document.write("</p>");
+    </script>
+</body>
+</html>
