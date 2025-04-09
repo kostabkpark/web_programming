@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body { background-color: linen;} */
+    </style>
+</head>
+<body>
+    <h3>방문시간(초)에 따른 배경색 변경</h3>
+    <hr>
+    <script>
+        let today = new Date();
+        if(today.getSeconds() % 2 == 0) {
+            document.body.style.backgroundColor = "violet";
+        } else {
+            document.body.style.backgroundColor = "lightskyblue";
+        }
+    </script>
+</body>
+</html>

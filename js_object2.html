@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let anyFunction = function () {
+            console.log("아무 함수");
+        }
+        let any = new Array(5);
+
+        any[0] = 5;
+        any[1] = 1.24;
+        any[2] = "hello";
+        any[3] = new Date();
+        any[4] = anyFunction;
+
+        any[4]();
+    </script>
+</body>
+</html>

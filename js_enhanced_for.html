@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 배열에 사용하는 반복문
+    객체에 사용하는 반복문 -->
+    <script>
+        let arr = [ 
+            {
+                name : "홍길동",
+                age : 30
+            }, 
+            {
+                name : "김연아",
+                age : 20
+            }
+        ]
+
+        for (const person of arr) {
+            document.write(`<p>${person.name} 은 ${person.age} 살 입니다. </p>`)
+        }
+
+        let student = {
+            univ : "kosta",
+            name : "홍길동",
+            score : 90
+        }
+
+        for (const key in student) {
+                document.write(`<p>${key} : ${student[key]} </p>`);
+        }
+
+        let numArr = [2,3,5,6];
+        numArr.forEach((item, index) => {
+            console.log(`numArr[${index}] : ${item}` )
+        });
+
+        let doubleArr = numArr.map((item)=> item * 2);
+
+        doubleArr.forEach((item, index) => {
+            console.log(`doubleArr[${index}] : ${item}` )
+        });
+
+        let evenNumber = numArr.filter( (number) => number % 2 == 0);
+        evenNumber.forEach((item) => console.log(item));
+
+
+        let json_student = JSON.stringify(student);
+        console.log(json_student);
+        let student2 = JSON.parse(json_student);
+        console.log(student2);
+    </script>
+</body>
+</html>
