@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="firstP">
+      
+    </p>
+
+    <script>
+      let firstP = document.getElementById("firstP");
+    //   console.log(`firstP.id = ${firstP.id}`);
+    //   console.log(`firstP.tagNamed = ${firstP.tagName}`);
+    //   console.log(`firstP.onclick = ${firstP.onclick}`);
+    //   console.log(`firstP.childElementCount = ${firstP.childElementCount}`);
+    //   console.log(firstP.innerHTML);
+    // 동적으로 p tag 의 innerHTML 과 onclick 이벤트리스너와 style 을 변경하세요
+    firstP.style.color="blue";
+    firstP.style.backgroundColor="yellow";
+    firstP.innerHTML = "이것은 동적으로 제어되는 <span style='color:red;'>p tag</span> 입니다. "
+    firstP.onclick=function() {
+        this.style.color="teal";
+    }
+    </script>
+  </body>
+</html>
