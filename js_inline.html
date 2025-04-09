@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 300px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- inline js , onclick 이벤트 리스너 와 함께 사용 -->
+    <img
+      src="./img/spring.jpg"
+      alt="img"
+      onclick="this.src='./img/summer.jpg'"
+    />
+
+    <!-- inline js , onmouseover, onmouseout 이벤트 리스너 와 함께 사용 -->
+    <img
+      src="./img/spring.jpg"
+      alt="img"
+      onmouseover="this.src='./img/summer.jpg'"
+      onmouseout="this.src='./img/spring.jpg'"
+    />
+  </body>
+</html>
