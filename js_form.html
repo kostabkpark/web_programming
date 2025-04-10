@@ -16,14 +16,43 @@
     <hr>
     <form action="#" name="form">
         <label for="season">계절을 선택하세요 : </label>
-        <select id="season" name="season" onchange="onChange()">
+        <select id="season" name="season">
+        <!-- onchange="onChange()"> -->
           <option value="1" >봄</option>
-          <option value="2" selected>여름</option>
+          <option value="2" >여름</option>
           <option value="3">가을</option>
           <option value="4">겨울</option>
         </select>
+        <br>
+        <input type="radio" name="season2" value="./img/spring.jpg" onchange="onChange2()" checked>봄
+        <input type="radio" name="season2" value="./img/summer.jpg" onchange="onChange2()">여름
+        <input type="radio" name="season2" value="./img/fall.jpg" onchange="onChange2()">가을
+        <input type="radio" name="season2" value="./img/winter.jpg" onchange="onChange2()">겨울
+        <input type="submit">
+        
+        <br>
+
+        <div>
+            
+            <input type="checkbox" id="check1" name="check1" value="10000" onclick="calc(this)"/>
+            <label for="check1">모자 1만원</label>
+
+            <input type="checkbox" id="check2" name="check2" value="30000" onclick="calc(this)"/>
+            <label for="check2">구두 3만원</label>
+            
+            <input type="checkbox" id="check3" name="check3" value="80000" onclick="calc(this)"/>
+            <label for="check3">가방 8만원</label>
+            <br>
+            <label for="price">가격</label>
+            <input type="text" id="price" name="price" value="0">
+            
+          </div>
+          <div>
+            <button type="submit">Subscribe</button>
+          </div>
+
       </form>
-      <img id="figure" src="" alt="">
+      <img id="figure" src="" alt="img">
       <script>
         let arr = [
             {no : 1, img : "./img/spring.jpg"}, 
@@ -37,8 +66,7 @@
 
         let select = document.form.season;
         //let select2 = document.forms["form"].elements["season"];
-        console.log(select.selectedIndex);
-        console.log(select.value);
+    
         for (const element of arr) {
             if(element.no == select.value) {
                 img.src = element.img;
@@ -49,6 +77,25 @@
             console.log(`${select.selectedIndex}번 인덱스, ${select.value} 가 선택됨 `);
             console.log(arr[select.selectedIndex].img);
             img.src = arr[select.selectedIndex].img;
+        }
+
+        function onChange2() {
+            let radio = document.form.season2 ;
+            for (const element of radio) {
+                if(element.checked) {
+                    console.log(element.value);
+                    img.src=element.value;
+                }
+            }
+        }
+
+        function calc(check) {
+            let price = document.getElementById("price");
+            if(check.checked) {
+                price.value = parseInt(price.value) + parseInt(check.value) ;
+            } else {
+                price.value = parseInt(price.value) - parseInt(check.value) ;
+            }
         }
       </script>
 </body>

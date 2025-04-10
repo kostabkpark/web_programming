@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-      function over() {
-        let p = document.getElementById("p");
-        p.style.color = "red";
-      }
-
-      function out() {
-        let p = document.getElementById("p");
-        p.style.color = "black";
-      }
-
       function init() {
         let p = document.getElementById("p");
-        p.onmouseover = over;
-        p.onmouseout = out;
+        p.addEventListener("mouseover", () =>{
+          p.style.color = "red";
+        });
+        p.addEventListener("mouseout", () => {
+          p.style.color="black";
+        });
+      //   p.onmouseover =  () => {
+      //   p.style.color = "red";
+      // };
+      //   p.onmouseout = () => {
+      //   p.style.color = "black";
+      // };
       }
     </script>
   </head>
