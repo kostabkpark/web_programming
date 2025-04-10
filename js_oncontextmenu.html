@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function hideMenu() {
+            alert("마우스 오른쪽 클릭 금지되었음");
+            return false;
+        }
+
+        function preventDrag() {
+            alert("이미지 드래그 금지");
+            return false;
+        }
+
+        function preventMouseDown(event) {
+            if (event.button === 2) { // 오른쪽 클릭
+                alert("이미지 저장 금지");
+                return false;
+            }
+        } 
+
+        // 문서 전체에서 오른쪽 클릭 금지
+        document.addEventListener("contextmenu", function(event) {
+            alert("문서에서 마우스 오른쪽 클릭이 금지되었습니다.");
+            event.preventDefault();
+        });
+    </script>
+</head>
+<body>
+    <h3>oncontextmenu 컨텍스트 메뉴 금지</h3>
+    <hr>
+    <p>마우스 오른쪽 클릭 금지. 컨텍스트 메뉴 볼 수 없음</p>
+    <img src="./img/spring.jpg" alt="spring" 
+        oncontextmenu="hideMenu();" 
+        ondragstart="preventDrag();" 
+        onmousedown="preventMouseDown(event);">
+</body>
+</html>

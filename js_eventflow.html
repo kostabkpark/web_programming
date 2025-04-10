@@ -22,18 +22,18 @@
 </head>
 <body>
     <p>이것은 문장입니다.</p>
-    <form action="" name="form">
+    <form action="#" name="form">
         <input id="text" type="text">
         <input id="btn" type="submit">
     </form>
     <script>
         let btn = document.querySelector("#btn");
-        btn.addEventListener("click", capture, true);
-        btn.addEventListener("click", bubble, false);
-        document.body.addEventListener("click", capture, true);
-        document.body.addEventListener("click", bubble, false);
-        document.body.form.addEventListener("click", capture, true);
-        document.body.form.addEventListener("click", bubble, false);
+        // btn.addEventListener("click", capture, true);
+        btn.addEventListener("click", bubble); // default : false (bubble 단계에 등록됨.)
+        // document.body.addEventListener("click", capture, true);
+        //document.body.addEventListener("click", bubble, false);
+        //document.body.form.addEventListener("click", capture, true);
+        //document.body.form.addEventListener("click", bubble, false);
     </script>
 </body>
 </html>
