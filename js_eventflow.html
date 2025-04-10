@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function capture(e) {
+            console.log("=======capture=======")
+            console.log(e.target);
+            console.log(e.currentTarget);
+            console.log(e.type);
+        }
+
+        function bubble(e) {
+            console.log("=======bubble=======")
+            console.log(e.target);
+            console.log(e.currentTarget);
+            console.log(e.type);
+        }
+    </script>
+</head>
+<body>
+    <p>이것은 문장입니다.</p>
+    <form action="" name="form">
+        <input id="text" type="text">
+        <input id="btn" type="submit">
+    </form>
+    <script>
+        let btn = document.querySelector("#btn");
+        btn.addEventListener("click", capture, true);
+        btn.addEventListener("click", bubble, false);
+        document.body.addEventListener("click", capture, true);
+        document.body.addEventListener("click", bubble, false);
+        document.body.form.addEventListener("click", capture, true);
+        document.body.form.addEventListener("click", bubble, false);
+    </script>
+</body>
+</html>

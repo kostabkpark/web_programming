@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function f(e) {
+            e.preventDefault();
+            console.log(e.target);
+            console.log(e.currentTarget);
+            console.log(`디폴트 행동 취소 여부 : ${e.defaultPrevented}`);
+        }
+    </script>
+</head>
+<body>
+    <p id="p">마우스를 올려보세요.</p>    
+    <button onclick="onClick(event)">클릭하세요</button>
+    <form action="#">
+        <input type="text" name="var">
+        <input type="text" name="var1">
+        <input type="text" name="var2">
+        <input type="submit" onclick="f(event)">
+    </form>
+    
+    <script>
+        function onClick(e) {
+            let p = document.querySelector("#p");
+            //p.onmouseover=f;
+            p.addEventListener("mouseover", f);
+        }
+    </script>
+
+</body>
+</html>
