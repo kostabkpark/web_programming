@@ -6,24 +6,38 @@
     <title>Document</title>
   </head>
   <body>
-    <p id="firstP">
+    <button id="btn">버튼을 누르면 사진이 나와요!</button>
+    <p id="img"></p>
+    <p class="firstP">
       
     </p>
 
+    <p class="firstP">
+      
+    </p>
+    
+
     <script>
-      let firstP = document.getElementById("firstP");
+      let button = document.getElementById("btn");
+      let p = document.getElementById("img");
+      button.onclick = function() {
+        p.innerHTML = `<img src="./img/spring.jpg" alt="spring" width="300px" height="200px">`;
+      }
+    </script>
+    <script>
+      let firstP = document.getElementsByClassName("firstP");
     //   console.log(`firstP.id = ${firstP.id}`);
     //   console.log(`firstP.tagNamed = ${firstP.tagName}`);
     //   console.log(`firstP.onclick = ${firstP.onclick}`);
     //   console.log(`firstP.childElementCount = ${firstP.childElementCount}`);
     //   console.log(firstP.innerHTML);
     // 동적으로 p tag 의 innerHTML 과 onclick 이벤트리스너와 style 을 변경하세요
-    firstP.style.color="blue";
-    firstP.style.backgroundColor="yellow";
-    firstP.innerHTML = "이것은 동적으로 제어되는 <span style='color:red;'>p tag</span> 입니다. "
-    firstP.onclick=function() {
-        this.style.color="teal";
-    }
+      for (const elementP of firstP) {
+        elementP.style.color="blue";
+        elementP.style.backgroundColor="yellow";
+        elementP.innerHTML = "이것은 동적으로 제어되는 <span style='color:red;'>p tag</span> 입니다. "
+        elementP.onclick= () => firstP.style.color="teal";
+      }
     </script>
   </body>
 </html>
