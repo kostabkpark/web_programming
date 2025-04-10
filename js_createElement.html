@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>DOM 객체 동적 생성</h3>
+    <hr>
+    <div>first</div>
+    <div>second</div>
+    <script>
+        let div = document.createElement("div");
+        div.setAttribute("id", "newDiv");
+        div.style.backgroundColor="yellowgreen";
+        div.innerText = "newDiv";
+
+        let parent = document.body;
+        // parent.appendChild(div);
+        // first 의 앞으로 새로 생성된 div DOM 을 추가
+        let divs = document.getElementsByTagName("div");
+        parent.insertBefore(div, divs[0]);
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function onClick(object, color, fontSize) {
+            object.style.backgroundColor=color;
+            object.style.fontSize=fontSize;
+        }
+    </script>
+</head>
+<body>
+    <h3>this 활용 예제</h3>
+    <hr>
+    <button onclick="onClick(this, 'darkgray', '20px')">색깔변경</button>
+    <button onclick="onClick(this, 'green', '30px')">크기변경</button>
+</body>
+</html>

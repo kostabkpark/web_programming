@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function btnClick() {
+            let btn = document.getElementById("btn");
+            btn.onclick = function() {
+                document.body.style.backgroundColor="yellowgreen";
+            }
+        }
+    </script>
+</head>
+<body onload="btnClick()">
+    <h3>document load test</h3>
+    <hr>
+    <button id="btn">클릭</button>
+
+</body>
+</html>

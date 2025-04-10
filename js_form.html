@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+            height: 160px;
+        }
+    </style>
+</head>
+<body>
+    <h3>form 요소 동적 제어 연습</h3>
+    <hr>
+    <form action="#" name="form">
+        <label for="season">계절을 선택하세요 : </label>
+        <select id="season" name="season" onchange="onChange()">
+          <option value="1" >봄</option>
+          <option value="2" selected>여름</option>
+          <option value="3">가을</option>
+          <option value="4">겨울</option>
+        </select>
+      </form>
+      <img id="figure" src="" alt="">
+      <script>
+        let arr = [
+            {no : 1, img : "./img/spring.jpg"}, 
+            {no : 2, img : "./img/summer.jpg"},
+            {no : 3, img : "./img/fall.jpg"},
+            {no : 4, img : "./img/winter.jpg"},
+        ];
+        let img = document.getElementById("figure");
+        img.src = "./img/spring.jpg";
+
+
+        let select = document.form.season;
+        //let select2 = document.forms["form"].elements["season"];
+        console.log(select.selectedIndex);
+        console.log(select.value);
+        for (const element of arr) {
+            if(element.no == select.value) {
+                img.src = element.img;
+            }
+        }
+
+        function onChange() {
+            console.log(`${select.selectedIndex}번 인덱스, ${select.value} 가 선택됨 `);
+            console.log(arr[select.selectedIndex].img);
+            img.src = arr[select.selectedIndex].img;
+        }
+      </script>
+</body>
+</html>

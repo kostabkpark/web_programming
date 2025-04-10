@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function over() {
+        let p = document.getElementById("p");
+        p.style.color = "red";
+      }
+
+      function out() {
+        let p = document.getElementById("p");
+        p.style.color = "black";
+      }
+
+      function init() {
+        let p = document.getElementById("p");
+        p.onmouseover = over;
+        p.onmouseout = out;
+      }
+    </script>
+  </head>
+  <body onload="init()">
+    <p id="p">마우스를 올리면 색깔이 변합니다.</p>
+    <script></script>
+  </body>
+</html>
