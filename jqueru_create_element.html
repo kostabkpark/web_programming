@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.7.0.min.js"></script>
+    <script>
+        $(()=>{
+            $('<h1></h1>').text('appendTo1')
+            .appendTo($('.target'))
+            $('<h1></h1>').text('appendTo2')
+            .appendTo($('.target'))
+            $('<h1></h1>').text('prependTo')
+            .prependTo($('.target'))
+            $('<h1></h1>').text('insertBefore')
+            .insertBefore($('.target'))
+            $('<h1></h1>').text('insertAfter')
+            .insertAfter($('.target'))
+        });
+    </script>
+</head>
+<body>
+    <div class="target">
+
+    </div>
+</body>
+</html>

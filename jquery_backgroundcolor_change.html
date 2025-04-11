@@ -15,15 +15,26 @@
     <h1>제목6</h1>
     <script>
         $(document).ready(function() {
-            const headerList = $('h1');
-            for(let i=0; i<headerList.length; i++) {
-                const header = headerList.get(i);
+            $('h1').each((i, header) => {
                 if(i % 2 == 1) {
                     $(header)
-                        .css('backgroundColor' , 'red')
-                        .css('color', 'white');
+                         .css({
+                            backgroundColor : 'red' ,
+                            color : 'white'
+                         });
+                    console.log($(header).text());
+                   //$(header).text("짝수번째 헤더입니다.");
+                   $(header).html('<span>짝수</span> 번째 헤더입니다.');
                 }
-            }
+            });
+            // for(let i=0; i<headerList.length; i++) {
+            //     const header = headerList.get(i);
+            //     if(i % 2 == 1) {
+            //         $(header)
+            //             .css('backgroundColor' , 'red')
+            //             .css('color', 'white');
+            //     }
+            // }
         });
     </script>
 </body>

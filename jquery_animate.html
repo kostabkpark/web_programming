@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.7.0.min.js"></script>
+    <style>
+        .first {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            opacity: 0.3;
+            position: absolute;
+            left :10px;
+            top : 50px;
+        }
+
+        .second {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            opacity: 0.3;
+            position: absolute;
+            left :10px;
+            top : 200px;
+        }
+
+        .third {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            opacity: 0.3;
+            position: absolute;
+            left :10px;
+            top : 350px;
+        }
+    </style>
+    <script>
+        $(()=>{
+            $('button').click(()=>{
+                $('.first').animate({
+                    left : '500px',
+                    opacity : 0.8
+                }, 2000 , 'linear')
+
+                $('.second').animate({
+                    left : '500px',
+                    opacity : 0.8
+                }, 2000 , 'swing')
+            })
+        });
+    </script>
+</head>
+<body>
+    <button>box 의 이동과 투명도 변경</button>
+    <hr>
+    <div class="first"></div>
+    <div class="second"></div>
+    
+</body>
+</html>
