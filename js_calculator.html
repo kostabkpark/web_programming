@@ -8,22 +8,22 @@
   <body>
     <h3>계산기 만들기</h3>
     <hr />
-    <form action="#" name="form">
+    <form action="#" name="form" onsubmit="onSubmit(event)">
       <label for="expr">식</label>
       <input type="text" id="expr" name="expr" /><br />
       <label for="result">계산결과</label>
-      <input type="text" id="result" name="result" value="0" />
-      <input type="submit" id="calc" value="계산" />
+      <input type="text" id="result" name="result" value="0" readonly/>
+      <input type="submit" value="계산" />
+      <input type="reset" value="reset">
     </form>
     <script>
-      let calc = document.querySelector("#calc");
-      calc.addEventListener("click", (e) => {
+      function onSubmit(e) {
         e.preventDefault();
         let expr = document.querySelector("#expr");
         let result = document.querySelector("#result");
         // console.log(expr.value);
         result.value = eval(expr.value);
-      });
+      }
     </script>
   </body>
 </html>

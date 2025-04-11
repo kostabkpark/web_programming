@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.0.min.js"></script> -->
+    <script src="./js/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <button id="btn">버튼을 클릭하면 모두 없어집니다.</button>
+    <p>클릭하면 없어짐</p>
+    <p>클릭하면 없어짐</p>
+    <p>클릭하면 없어짐</p>
+    <script>
+    //   $(() => {
+    //     $("#btn").click(() => {
+    //       $("p").hide();
+    //     });
+    //   });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("btn").addEventListener("click", function () {
+          const paragraphs = document.querySelectorAll("p");
+          paragraphs.forEach((p) => {
+            p.style.display = "none";@
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

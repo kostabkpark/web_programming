@@ -4,8 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        function onClick() {
+            const ul = document.getElementById("ul");
+            // for(let i=0; i<3000; i++) {
+            //     ul.innerHTML += `<li>${i}</li>`;
+            // }
+            let list="";
+            for(let i=0; i<3000; i++) {
+                list += `<li>${i}</li>`
+            }
+            ul.innerHTML = list;
+        }
+    </script>
 </head>
-<body onload = "alert('Page loaded!')">
-    <h3>onload</h3>
+<!-- document.onload -->
+<body>
+<!--  onload="alert('문서 로딩 완료')"> -->
+    <ul id="ul">
+    </ul>
+    <img src="" alt="">
+    <script>
+        var myImg = document.querySelector('img');
+        myImg.src = "./img/spring.jpg";
+        myImg.onload = () => {
+            console.log(myImg.width);
+            console.log(myImg.height);
+        }
+    
+        // 3000번 DOM 을 수정함, 4500ms 정도 소요됨.
+        function onClick1(){
+            const ul = document.getElementById("ul");
+            for(let i=0; i<3000; i++){
+                ul.innerHTML += `<li>${i}</li>`;
+            }
+        }
+        // list 를 만든 후 한번만 DOM 을 수정함
+        function onClick2(){
+            const ul = document.getElementById("ul");
+            let list="";
+            for(let i=0; i<3000; i++){
+                list += `<li>${i}</li>`;
+            }
+            ul.innerHTML = list;
+        }
+
+        //onClick1();
+    </script>
 </body>
 </html>
