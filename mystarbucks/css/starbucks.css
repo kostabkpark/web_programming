@@ -1,0 +1,80 @@
+@charset "utf-8";
+body {
+    margin : 0px;
+    height : 1600px;
+}
+
+#fav_wrap {
+    background : url('../img/2025_spring_pick_bg.png') fixed no-repeat;
+    position : absolute;
+    width: 1600px;
+    height: 800px;
+}
+/* .fav_text_01 {
+    animation:move-forward 2s ease-in-out;
+    left:450px;
+} */
+
+#fav_wrap .fav_txt {
+    color : white;
+    position: absolute;
+}
+
+#fav_wrap .fav_txt_2 {
+    color : white;
+    position: absolute;
+}
+
+#fav_img {
+    position : absolute;
+    right : 120px;
+    top : 80px;
+    width:600px;
+    height:400px;
+}
+
+.big-text {
+    font-size: 6em;
+    top : 10px;
+    left : 450px;
+}
+
+.medium-text {
+    font-size:4em;
+    top : 160px;
+    left : 450px;
+}
+
+.small-text {
+    font-size:2em;
+    top: 280px;
+    left:450px;
+}
+
+.fav_menu_text {
+    font-size:1.2em;
+    top : 380px;
+    left: 450px;
+}
+
+@keyframes move-forward {
+    from {
+        left : -300px;
+        opacity: 0.1;
+    }
+    to {
+        left:450px;
+        opacity: 1;
+    }
+}
+
+@keyframes move-backward {
+    from {
+        left:450px;
+        opacity: 1;
+    }
+    to {
+        left : -300px;
+        opacity: 0.1;
+    }
+}
