@@ -34,10 +34,17 @@
       }
       /* slider */
       #slidewrap {width: 1000px; height: 350px;
-      margin:50px 0; position:relative}
+      margin:50px 0; position:relative; background-color: yellow;}
       #slide {width: 100%;}
-      #slide > li {width: 100%; height: 350px; position:relative;}
+      #slide > li {width: 100%; height: 350px; position:absolute;
+        top:0px;left:0px}
       #slide > li > img {width: 100%; height:350px;}
+      #slide li:not(:first-child) {display:none;}
+      /* slider button */
+      span {position: absolute; top:50%; display: block; font-size: 38px; color:#fff; line-height: 40px; 
+        background: rgba(0,0,0,0.6); cursor: pointer; height: 50px; transform: translateY(-50%); }
+      .prev {left:0; border-radius: 0 10px 10px 0px; padding:10px;}
+      .next {right:0; border-radius: 10px 0px 0px 10px; padding:10px;}
     </style>
     <script src="./js/jquery-3.7.0.min.js"></script>
   </head>
@@ -79,10 +86,13 @@
         <li><img src="./img/fall.jpg" alt="fall"></li>
         <li><img src="./img/winter.jpg" alt="winter"></li>
       </ul>
+      <p>이전,다음 버튼으로 제어하는 오토 슬라이드</p>
+      <span class="prev">&lt;</span>
+      <span class="next">&gt;</span>
     </div>
 
-
     <script>
+      // 메뉴 드랍다운
       $(() => {
         $(".menu > li")
           .mouseover(() => {
@@ -92,6 +102,28 @@
             $(".sub").stop().slideUp();
           });
       });
+      // 오토 슬라이드
+      var i=0;
+      function slide() {
+        i++;
+        if(i > $("#slide li:last").index()) {
+          i = 0;
+        }
+        $('#slide li').eq(i).stop().fadeIn('slow');
+        $('#slide li').eq(i-1).stop().fadeOut();
+      }
+      //setInterval(slide, 3000);
+      // next 버튼으로 이미지 디스플레이 조정
+      function next(){
+        $('.slide').stop().animate({marginLeft:-1000},()=>{
+          $('.slide li:first').appendTo('.slide');
+          $('.slide').css({marginLeft:0});
+        })
+      }
+
+      $('.next').click(()=>{
+        next();
+      })
     </script>
   </body>
 </html>
