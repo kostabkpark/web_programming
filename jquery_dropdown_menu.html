@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* all document */
+      * {
+        margin: 0;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      /* menu */
+      nav ul a {
+        background-color: black;
+        color: white;
+      }
+      nav ul a:hover {
+        background-color: yellow;
+        color: black;
+      }
+      a {
+        text-decoration: none;
+      }
+      .menu > li {
+        float: left;
+        margin: 0 50px;
+      }
+      .menu .sub {
+        display: none;
+      }
+      /* slider */
+      #slidewrap {width: 1000px; height: 350px;
+      margin:50px 0; position:relative}
+      #slide {width: 100%;}
+      #slide > li {width: 100%; height: 350px; position:relative;}
+      #slide > li > img {width: 100%; height:350px;}
+    </style>
+    <script src="./js/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <nav>
+      <ul class="menu">
+        <li>
+          <a href="#">menu1</a>
+          <ul class="sub">
+            <li><a href="jquery_dropdown_submenu.html">submenu1</a></li>
+            <li><a href="jquery_dropdown_submenu.html">submenu2</a></li>
+            <li><a href="jquery_dropdown_submenu.html">submenu3</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">menu2</a>
+          <ul class="sub">
+            <li><a href="jquery_dropdown_submenu.html">submenu1</a></li>
+            <li><a href="jquery_dropdown_submenu.html">submenu2</a></li>
+            <li><a href="jquery_dropdown_submenu.html">submenu3</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">menu3</a>
+          <ul class="sub">
+            <li><a href="jquery_dropdown_submenu.html">submenu1</a></li>
+            <li><a href="jquery_dropdown_submenu.html">submenu2</a></li>
+            <li><a href="jquery_dropdown_submenu.html">submenu3</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- slider -->
+    <div id="slidewrap">
+      <ul id="slide">
+        <li><img src="./img/spring.jpg" alt="spring"></li>
+        <li><img src="./img/summer.jpg" alt="summer"></li>
+        <li><img src="./img/fall.jpg" alt="fall"></li>
+        <li><img src="./img/winter.jpg" alt="winter"></li>
+      </ul>
+    </div>
+
+
+    <script>
+      $(() => {
+        $(".menu > li")
+          .mouseover(() => {
+            $(".sub").stop().slideDown();
+          })
+          .mouseout(() => {
+            $(".sub").stop().slideUp();
+          });
+      });
+    </script>
+  </body>
+</html>
